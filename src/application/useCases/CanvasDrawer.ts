@@ -39,7 +39,14 @@ export class CanvasDrawer implements CanvasImageDrawer, CanvasGridDrawer {
   }
 
   drawGrid(params: DrawGridParams): void {
-    const { canvas, imageDimensions, paperDimensions, gap } = params;
+    const {
+      canvas,
+      imageDimensions,
+      paperDimensions,
+      gap,
+      lineColor,
+      lineWidth,
+    } = params;
     const imageRes = Math.sqrt(imageDimensions.width * imageDimensions.height);
     const paperRes = Math.sqrt(
       cmToPx(Number(paperDimensions.width)) *
@@ -48,8 +55,8 @@ export class CanvasDrawer implements CanvasImageDrawer, CanvasGridDrawer {
     const measure = imageRes / paperRes;
     const finalGap = measure * cmToPx(Number(gap));
     const context = canvas.getContext("2d");
-    context.strokeStyle = "rgba(0,0,0,1)";
-    context.lineWidth = 2;
+    context.strokeStyle = lineColor;
+    context.lineWidth = lineWidth;
     let rows = 0;
     let columns = 0;
     while (rows < imageDimensions.height) {

@@ -15,6 +15,8 @@ export const CanvasGridDrawerToken = "CanvasGridDrawer";
 
 export type DrawGridParams = {
   canvas: Canvas;
+  lineColor: string;
+  lineWidth: number;
   imageDimensions: Dimensions;
   paperDimensions: Dimensions;
   gap: number;

@@ -22,6 +22,7 @@
     "inversify": "^6.0.1",
     "next": "12.2.3",
     "react": "18.2.0",
+    "react-colorful": "^5.5.1",
     "react-dom": "18.2.0",
     "react-imask": "^6.4.2",
     "react-zoom-pan-pinch": "^2.1.3",

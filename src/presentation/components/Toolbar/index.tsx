@@ -1,10 +1,19 @@
 import { FormikContextType, Form, FormikProvider } from "formik";
-import { Stack, TextField, MenuItem, Button } from "@mui/material";
+import {
+  Box,
+  Stack,
+  TextField,
+  MenuItem,
+  Button,
+  FormControl,
+  InputLabel,
+} from "@mui/material";
 
 import { ToolbarForm } from "@presentation/screens/Home/types";
 
 import FileButton from "../FileButton/FileButton";
 import { MaskedField } from "../MaskedField";
+import ColorPicker from "../ColorPicker";
 
 import { PAPER_SIZES } from "./constants";
 import { RootStyle } from "./styles";
@@ -34,7 +43,14 @@ const Toolbar = ({
     setImageFile(file);
   };
 
-  const { values, errors, touched, getFieldProps, handleSubmit } = formik;
+  const {
+    values,
+    errors,
+    touched,
+    getFieldProps,
+    handleSubmit,
+    setFieldValue,
+  } = formik;
 
   return (
     <RootStyle>
@@ -51,6 +67,24 @@ const Toolbar = ({
                   onChange: handleImage,
                 }}
               />
+            </Stack>
+            <Stack spacing={2}>
+              <MaskedField
+                mask={Number}
+                label="Largura das linhas (Pixel)"
+                {...getFieldProps("lineWidth")}
+                error={Boolean(touched.lineWidth && errors.lineWidth)}
+                helperText={touched.lineWidth && errors.lineWidth}
+              />
+              <Stack direction="row" spacing={2} alignItems="center">
+                <InputLabel sx={{ position: "relative" }}>
+                  Cor da Grid
+                </InputLabel>
+                <ColorPicker
+                  color={values.lineColor}
+                  onChange={(color) => setFieldValue("lineColor", color)}
+                />
+              </Stack>
             </Stack>
             <Stack spacing={2}>
               <MaskedField

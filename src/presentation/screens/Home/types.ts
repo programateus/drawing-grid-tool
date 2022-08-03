@@ -17,4 +17,6 @@ export type ToolbarForm = {
   paperWidth: string;
   paperHeight: string;
   gap: string;
+  lineWidth: string;
+  lineColor: string;
 };

@@ -35,11 +35,13 @@ const HomeScreen = ({
       paperWidth: "",
       paperHeight: "",
       gap: "1",
+      lineColor: "#000",
+      lineWidth: "2",
     },
     validationSchema: TOOLBAR_FORM_SCHEMA,
     onSubmit: async (values) => {
       if (!imageData || !canvas) return;
-      const { paperWidth, paperHeight, gap } = values;
+      const { paperWidth, paperHeight, gap, lineColor, lineWidth } = values;
       const { dimensions } = imageData;
       await canvasImageDrawer.drawImage({
         canvas,
@@ -48,6 +50,8 @@ const HomeScreen = ({
       });
       canvasGridDrawer.drawGrid({
         canvas,
+        lineColor,
+        lineWidth: Number(lineWidth),
         gap: Number(gap),
         imageDimensions: dimensions,
         paperDimensions: {
