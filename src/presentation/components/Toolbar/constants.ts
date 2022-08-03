@@ -1,0 +1,80 @@
+export const PAPER_SIZES = [
+  {
+    name: "4A0",
+    value: "4A0",
+    width: 1682,
+    height: 2378,
+  },
+  {
+    name: "2A0",
+    value: "2A0",
+    width: 1189,
+    height: 1682,
+  },
+  {
+    name: "A0",
+    value: "A0",
+    width: 841,
+    height: 1189,
+  },
+  {
+    name: "A1",
+    value: "A1",
+    width: 594,
+    height: 841,
+  },
+  {
+    name: "A2",
+    value: "A2",
+    width: 420,
+    height: 594,
+  },
+  {
+    name: "A3",
+    value: "A3",
+    width: 297,
+    height: 420,
+  },
+  {
+    name: "A4",
+    value: "A4",
+    width: 210,
+    height: 297,
+  },
+  {
+    name: "A5",
+    value: "A5",
+    width: 148,
+    height: 210,
+  },
+  {
+    name: "A6",
+    value: "A6",
+    width: 105,
+    height: 148,
+  },
+  {
+    name: "A7",
+    value: "A7",
+    width: 74,
+    height: 105,
+  },
+  {
+    name: "A8",
+    value: "A8",
+    width: 52,
+    height: 74,
+  },
+  {
+    name: "A9",
+    value: "A9",
+    width: 37,
+    height: 52,
+  },
+  {
+    name: "A10",
+    value: "A10",
+    width: 26,
+    height: 37,
+  },
+];
